@@ -1,0 +1,11 @@
+elpa/
+url/cache/
+auto-save-list/
+eshell/
+url/
+local/
+helm-adaptive-history
+.org-id-locations
+TODO
+*~
+\#*
