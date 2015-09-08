@@ -40,6 +40,10 @@
      '(magit-item-highlight ((t :background "black")))
      '(hl-line              ((t :background "gray10"))))))
 
+(use-package dired
+  :config
+  (define-key dired-mode-map (kbd "C-l") #'dired-up-directory))
+
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
   :ensure t
@@ -49,7 +53,7 @@
 (use-package expand-region
   :ensure t
   :bind ("C-=" . er/expand-region))
-t
+
 (use-package helm
   :ensure t
   :init
@@ -96,8 +100,9 @@ t
     (require 'org-agenda-add-overlays)
     (add-hook 'org-agenda-finalize-hook 'org-agenda-add-overlays)
     (setf org-log-done t)
+    (global-set-key (kbd "C-c c") #'org-capture)
     (global-set-key (kbd "C-c a") #'org-agenda)     ;; org-agenda-files specified in os setting
-    (if (file-exists-p "~/Dropbox/Apps/MobileOrg")  
+    (if (file-exists-p "~/Dropbox/Apps/MobileOrg")  ;; MobileOrg settings
 	(progn
 	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
