@@ -97,15 +97,22 @@
   :ensure t
   :config
   (progn
-    (require 'org-agenda-add-overlays)
+    (require 'org-agenda-add-overlays)            ;; agenda + capture settings
     (add-hook 'org-agenda-finalize-hook 'org-agenda-add-overlays)
+    (setf org-directory "~/org")
+    (setf org-agenda-files (concat org-directory "/todo.org"))
+    (setf org-default-notes-file (concat org-directory "/notes.org"))
     (setf org-log-done t)
+    (setq org-capture-templates
+	  '(("t" "Todo" entry (file+headline (concat org-directory "/todo.org") "Tasks")
+	    "* TODO %?\n  %u")
+	   ))
     (global-set-key (kbd "C-c c") #'org-capture)
-    (global-set-key (kbd "C-c a") #'org-agenda)     ;; org-agenda-files specified in os setting
+    (global-set-key (kbd "C-c a") #'org-agenda)  
     (if (file-exists-p "~/Dropbox/Apps/MobileOrg")  ;; MobileOrg settings
-	(progn
-	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
+    	(progn
+    	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+    	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
 
 (use-package virtualenvwrapper
   :ensure t
