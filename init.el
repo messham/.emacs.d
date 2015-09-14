@@ -100,15 +100,18 @@
     (require 'org-agenda-add-overlays)            ;; agenda + capture settings
     (add-hook 'org-agenda-finalize-hook 'org-agenda-add-overlays)
     (setf org-directory "~/org")
-    (setf org-agenda-files (concat org-directory "/todo.org"))
+    (setf org-agenda-files (list org-directory))
     (setf org-default-notes-file (concat org-directory "/notes.org"))
+    (setf org-agenda-start-on-weekday nil)
     (setf org-log-done t)
+    (setf org-reverse-note-order t)
     (setq org-capture-templates
 	  '(("t" "Todo" entry (file+headline (concat org-directory "/todo.org") "Tasks")
 	    "* TODO %?\n  %u")
 	   ))
     (global-set-key (kbd "C-c c") #'org-capture)
-    (global-set-key (kbd "C-c a") #'org-agenda)  
+    (global-set-key (kbd "C-c a") #'org-agenda)
+    (org-agenda-list)
     (if (file-exists-p "~/Dropbox/Apps/MobileOrg")  ;; MobileOrg settings
     	(progn
     	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
