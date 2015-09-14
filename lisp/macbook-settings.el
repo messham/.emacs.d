@@ -10,21 +10,12 @@
 ;; startup layout config
 (setf inhibit-startup-screen t)
 (setq initial-frame-alist '((fullscreen . maximized)))
-(if (package-installed-p 'org)
-    (progn
-      (setq org-agenda-files (list "~/Documents/ubc"
-				   "~/Documents/ubc/cpsc110"
-				   "~/Documents/ubc/cogs200"
-				   "~/Documents/ubc/stat200"
-				   "~/Documents/southerncross"
-				   "~/Documents/other"
-				   "~/Documents/finances"))
-     )) ;;(org-agenda-list)))
-     ;; (add-hook 'after-init-hook 'org-agenda-list)
-     ;; (setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))))
+;;(if (package-installed-p 'org) (org-agenda-list))
+      ;; (add-hook 'after-init-hook 'org-agenda-list)
+      ;; (setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))))
 
-;;(next-multiframe-window)
-;;(eshell)
+(next-multiframe-window)
+(eshell)
 ;;(split-window-horizontally)
 
 (provide 'macbook-settings)
