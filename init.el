@@ -6,6 +6,12 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+;; emacs backup settings
+(setq backup-directory-alist `((".*" . "~/.saves"))
+      backup-by-copying t
+      delete-old-versions t
+      version-control t)
+
 ;; load package.el and use-package.el
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
