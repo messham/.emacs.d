@@ -123,6 +123,14 @@
     	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
 
+(use-package smart-compile
+  :ensure t
+  :config
+  (progn
+    (global-set-key (kbd "C-c C") #'smart-compile)))
+
+;; !!! config smart compile for python
+
 (use-package virtualenvwrapper
   :ensure t
   :config
