@@ -16,6 +16,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
+(package-refresh-contents)
 (setq package-enable-at-startup nil)
 (package-initialize)
 (unless (package-installed-p 'use-package)
@@ -31,6 +32,11 @@
   (require 'macbook-settings))
 
 ;; set individual package configs
+(use-package auto-complete
+  :ensure t
+  :config
+  (add-to-list 'ac-modes 'c++-mode))
+
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
   :init
@@ -123,7 +129,7 @@
     	  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
     	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
 
-(use-package smart-compile
+ (use-package smart-compile
   :ensure t
   :config
   (progn
