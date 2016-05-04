@@ -16,7 +16,6 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(package-refresh-contents)
 (setq package-enable-at-startup nil)
 (package-initialize)
 (unless (package-installed-p 'use-package)
@@ -35,7 +34,9 @@
 (use-package auto-complete
   :ensure t
   :config
-  (add-to-list 'ac-modes 'c++-mode))
+  (progn
+    (ac-config-default)
+    (add-to-list 'ac-modes 'c++-mode)))
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
@@ -145,4 +146,8 @@
     (setf venv-location "~/.virtualenvs")))
 
 (use-package yasnippet
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    (yas-reload-all)
+    (add-hook 'c++-mode-hook #'yas-minor-mode)))
