@@ -1,5 +1,6 @@
 ;; messham emacs init file ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; REQUIRES EMACS >= 24.4
 
 ;; turn off all of the bars
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -47,6 +48,7 @@
     (global-hl-line-mode 1)
     (custom-set-faces
      '(cursor               ((t :background "#eebb28")))
+     '(linum                ((t :foreground "gray55")))
      '(diff-added           ((t :foreground "green" :underline nil)))
      '(diff-removed         ((t :foreground "red" :underline nil)))
      '(highlight            ((t :background "black" :underline nil)))
