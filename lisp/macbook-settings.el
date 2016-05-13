@@ -10,13 +10,9 @@
 ;; startup layout config
 (setf inhibit-startup-screen t)
 (setq initial-frame-alist '((fullscreen . maximized)))
-;;(if (package-installed-p 'org) (org-agenda-list))
-      ;; (add-hook 'after-init-hook 'org-agenda-list)
-      ;; (setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))))
-
+(if (package-installed-p 'org) (org-agenda-list))
 (next-multiframe-window)
 (eshell)
-;;(split-window-horizontally)
 
 (provide 'macbook-settings)
 
