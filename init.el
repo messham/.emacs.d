@@ -13,6 +13,9 @@
       delete-old-versions t
       version-control t)
 
+;; add file path to non-package programs
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 ;; load package.el and use-package.el
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -23,9 +26,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
-
-;; add file path to non-package programs
-(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; set individual package configs
 (require 'use-package-configs)

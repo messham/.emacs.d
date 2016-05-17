@@ -5,6 +5,7 @@
   :config
   (progn
     (ac-config-default)
+    (setf ac-use-menu-map t)
     (add-to-list 'ac-modes 'c++-mode)))
 
 (use-package color-theme-sanityinc-tomorrow
