@@ -121,8 +121,8 @@
   :config
   (progn
     (yas-reload-all)
-    (add-hook 'c++-mode-hook #'yas-minor-mode)
-    ;; TODO add c++ cout snippet))
+    (add-hook 'c++-mode-hook #'yas-minor-mode)))
+    ;; TODO add c++ cout snippet
 
 (provide 'use-package-configs)
 
