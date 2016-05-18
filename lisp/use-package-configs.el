@@ -15,6 +15,7 @@
     (load-theme 'sanityinc-tomorrow-night :no-confirm)
     (setf frame-background-mode 'dark)
     (global-hl-line-mode 1)
+    (show-paren-mode 1)
     (custom-set-faces
      '(cursor               ((t :background "#eebb28")))
      '(linum                ((t :foreground "gray55")))
@@ -108,8 +109,6 @@
   (progn
     (global-set-key (kbd "C-c C") #'smart-compile)))
 
-;; !!! config smart compile for python
-
 (use-package virtualenvwrapper
   :ensure t
   :config
@@ -122,7 +121,8 @@
   :config
   (progn
     (yas-reload-all)
-    (add-hook 'c++-mode-hook #'yas-minor-mode)))
+    (add-hook 'c++-mode-hook #'yas-minor-mode)
+    ;; TODO add c++ cout snippet))
 
 (provide 'use-package-configs)
 
