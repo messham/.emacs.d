@@ -123,7 +123,6 @@
     (setf yas-snippet-dirs (list "~/.emacs.d/lisp/snippets" yas-installed-snippets-dir))
     (yas-reload-all)
     (add-hook 'c++-mode-hook #'yas-minor-mode)))
-    ;; TODO add c++ cout and try snippets
 
 (provide 'use-package-configs)
 
