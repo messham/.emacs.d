@@ -6,7 +6,9 @@
   (progn
     (ac-config-default)
     (setf ac-use-menu-map t)
+    (define-key ac-menu-map (kbd "TAB") 'ac-complete)
     (add-to-list 'ac-modes 'c++-mode)))
+;; TODO: configure menu-map for using tab as completion only (not cycle)
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t

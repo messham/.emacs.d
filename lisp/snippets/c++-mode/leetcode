@@ -1,0 +1,40 @@
+# -*- mode: snippet -*-
+# name: leetcode
+# key: leet
+# --
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+void printVector(vector<int> nums) {
+  for (int i = 0; i < nums.size(); i++) {
+    cout << nums[i] << " ";
+  }
+  cout << endl;
+}
+
+void printArray(int* nums) {
+  for (int i = 0; i < sizeof(nums)/sizeof(nums[0]) + 1; i++) {
+    cout << nums[i] << " ";
+  }
+  cout << endl;
+}
+
+// PASTE SOLUTION TEMPLATE HERE
+$0
+
+
+int main()
+{
+  Solution solution;
+  int tmp[] = {0, 0, 1};
+  vector<int> nums( tmp, tmp + 3 );
+  vector<int> result;
+  printVector(result);
+  printArray(tmp);
+
+  return 0;
+}
