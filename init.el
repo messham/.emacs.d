@@ -28,8 +28,14 @@
 (require 'use-package)
 
 ;; set individual package configs
+(setq load-prefer-newer t)
 (require 'use-package-configs)
 
 ;; load workspace specific settings
 (when (eq system-type 'darwin)
   (require 'macbook-settings))
+
+;; misc preferences
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+
+

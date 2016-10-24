@@ -42,6 +42,9 @@
   :ensure t
   :bind ("C-=" . er/expand-region))
 
+(use-package haskell-mode
+  :ensure t)
+
 (use-package helm
   :ensure t
   :init
@@ -106,10 +109,10 @@
     	  (setq org-mobile-inbox-for-pull "~/org/flagged.org"))))) 
 
  (use-package smart-compile
-  :ensure t
-  :config
-  (progn
-    (global-set-key (kbd "C-c C") #'smart-compile)))
+   :ensure t
+   :config
+   (progn
+     (global-set-key (kbd "C-c C") #'smart-compile)))
 
 (use-package virtualenvwrapper
   :ensure t
