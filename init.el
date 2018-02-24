@@ -37,5 +37,5 @@
 
 ;; misc preferences
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
-
+(global-set-key (kbd "M-/") #'comment-or-uncomment-region)
 
